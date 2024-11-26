@@ -1,33 +1,25 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileen")
-
-
-# The game starts here.
-
+﻿image movie = Movie(
+    "./video/workstation line-art.webm",
+    size=(6444, 2900),
+    yanchor='center',
+    ypos= .5,
+    play="./video/workstation line-art.webm",
+    image="./images/backgrounds/bg workstation line-art.png",
+    loop=False
+)
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    "lets start this drawing!!!!"
 
-    scene bg room
+    # show movie with fade
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    $renpy.movie_cutscene("./video/workstation line-art.webm")
+    
+    show bg workstation line-art
+    with dissolve
 
-    show eileen happy
+    "hello"
 
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
+    "this is a test"
 
     return
